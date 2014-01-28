@@ -25,7 +25,7 @@ define('DB_USER', 'admin');
 define('DB_PASSWORD', getenv("DB_PASSWORD"));
 
 /** MySQL hostname */
-define('DB_HOST', exec("/usr/bin/serf members -role=mysql | awk {'print $2'} |  | cut -d':' -f1"));
+define('DB_HOST', exec("/usr/bin/serf members -role=mysql | awk {'print $2'} | cut -d':' -f1"));
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
