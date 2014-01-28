@@ -3,12 +3,10 @@ MAINTAINER Lucas Carlson <lucas@rufy.com>
 
 # Let's get serf
 RUN apt-get update -q
-RUN apt-get install -qy build-essential git supervisor wget unzip
+RUN apt-get install -qy build-essential git supervisor wget unzip apache2 libapache2-mod-php5
 RUN wget https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip
 RUN unzip 0.3.0_linux_amd64.zip
 RUN mv serf /usr/bin/
-
-RUN apt-get update && apt-get -y upgrade && ! DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 libapache2-mod-php5
 
 ADD /start-apache2.sh /start-apache2.sh
 ADD /start-serf.sh /start-serf.sh
