@@ -3,7 +3,7 @@ MAINTAINER Lucas Carlson <lucas@rufy.com>
 
 # Let's get serf
 RUN apt-get update -q
-RUN apt-get install -qy build-essential git supervisor wget unzip apache2 libapache2-mod-php5
+RUN apt-get install -qy build-essential git supervisor wget unzip apache2 libapache2-mod-php5 php5-mysql
 RUN wget https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip
 RUN unzip 0.3.0_linux_amd64.zip
 RUN mv serf /usr/bin/
