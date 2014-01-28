@@ -18,6 +18,7 @@ RUN chmod 755 /*.sh
 
 RUN git clone https://github.com/WordPress/WordPress.git /app
 ADD /wp-config.php /app/wp-config.php
+RUN rm -fr /var/www && ln -s /app /var/www
 
 EXPOSE 80
 CMD ["/run.sh"]
