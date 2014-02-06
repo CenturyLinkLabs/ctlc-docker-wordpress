@@ -24,6 +24,6 @@ It will store the new container ID (like `d35bf1374e88`) in $ID. Get the allocat
 
 It will print the allocated port (like 4751). Test your deployment:
 
-	serf join 0.0.0.0:4751
+	curl http://0.0.0.0:4751/readme.html
 
 Done!
