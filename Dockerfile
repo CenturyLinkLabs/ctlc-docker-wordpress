@@ -22,6 +22,7 @@ RUN rm -fr /var/www /serf.zip && ln -s /app /var/www
 RUN a2enmod rewrite
 ADD /security /etc/apache2/conf.d/security
 ADD /php.ini /etc/php5/apache2/php.ini
+ADD /apache_default /etc/apache2/sites-available/default
 
 EXPOSE 80
 CMD ["/run.sh"]
