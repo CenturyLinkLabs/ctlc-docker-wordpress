@@ -24,5 +24,10 @@ ADD /security /etc/apache2/conf.d/security
 ADD /php.ini /etc/php5/apache2/php.ini
 ADD /apache_default /etc/apache2/sites-available/default
 
+
+# Now install APC
+RUN apt-get install -qy php-pear php5-dev make libpcre3-dev
+RUN pecl install apc
+
 EXPOSE 80
 CMD ["/run.sh"]
