@@ -4,8 +4,8 @@ MAINTAINER Lucas Carlson <lucas@rufy.com>
 # Let's get serf
 RUN apt-get update -q
 RUN apt-get install -qy git supervisor wget unzip apache2 libapache2-mod-php5 php5-mysql
-RUN wget https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip
-RUN unzip 0.3.0_linux_amd64.zip
+ADD https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip /serf.zip
+RUN unzip serf.zip
 RUN mv serf /usr/bin/
 
 ADD /start-apache2.sh /start-apache2.sh
@@ -18,7 +18,10 @@ RUN chmod 755 /*.sh
 
 RUN git clone https://github.com/WordPress/WordPress.git /app
 ADD /wp-config.php /app/wp-config.php
-RUN rm -fr /var/www && ln -s /app /var/www
+RUN rm -fr /var/www /serf.zip && ln -s /app /var/www
+RUN a2enmod rewrite
+ADD /security /etc/apache2/conf.d/security
+ADD /php.ini /etc/php5/apache2/php.ini
 
 EXPOSE 80
 CMD ["/run.sh"]
