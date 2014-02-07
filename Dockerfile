@@ -3,7 +3,7 @@ MAINTAINER Lucas Carlson <lucas@rufy.com>
 
 # Let's get serf
 RUN apt-get update -q
-RUN apt-get install -qy git supervisor unzip apache2 libapache2-mod-php5 php5-mysql php5-memcache
+RUN apt-get install -qy git supervisor unzip apache2 libapache2-mod-php5 php5-mysql php5-memcache php5-curl
 ADD https://dl.bintray.com/mitchellh/serf/0.4.1_linux_amd64.zip serf.zip
 RUN unzip serf.zip
 RUN mv serf /usr/bin/
