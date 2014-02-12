@@ -1,2 +1,2 @@
 #!/bin/bash
-exec serf agent -tag role=wordpress
+exec serf agent -tag role=web
