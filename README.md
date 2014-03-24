@@ -11,7 +11,7 @@ To create the image `ctlc/wordpress`, execute the following command on the ctlc-
 
 	sudo docker build -t ctlc/wordpress .
 
-Running the Serf agent
+Running the WordPress container
 ------------------------
 
 Run the `/run.sh` script to start WordPress (via Docker supervisor):
