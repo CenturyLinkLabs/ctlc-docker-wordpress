@@ -2,7 +2,7 @@ FROM ubuntu:quantal
 MAINTAINER Lucas Carlson <lucas@rufy.com>
 
 RUN apt-get update -q
-RUN apt-get install -qy git supervisor apache2 libapache2-mod-php5 php5-mysql php5-memcache php5-curl
+RUN apt-get install -qy git supervisor apache2 libapache2-mod-php5 php5-mysql php5-memcache php5-curl php5-imagick
 
 ADD /start-apache2.sh /start-apache2.sh
 ADD /run.sh /run.sh
